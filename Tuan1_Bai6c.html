@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Date</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f6f9;
+        }
+        .container {
+            width: 300px;
+            border: 1px solid #739ac5;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            color: #000;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 3px;
+            border: 1px solid #7f9db9;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input[type="color"] {
+            width: 60px;
+            height: 25px;
+            border: 1px solid #7f9db9;
+            padding: 0;
+            cursor: pointer;
+            background-color: #0000ff;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            padding: 3px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telephone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color" name="color" value="#0000ff">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" value="2015-07-16">
+            </div>
+
+            <div class="btn-container">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

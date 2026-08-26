@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Systems - LSM400 Linear Smith Machine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #ef4444;
+            --accent-hover: #dc2626;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Bar */
+        header {
+            background-color: var(--primary);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: var(--radius);
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        header img {
+            max-height: 45px;
+            object-fit: contain;
+        }
+
+        .header-contact {
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .header-contact span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .badge {
+            background-color: #fee2e2;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .product-image-container {
+            position: relative;
+            text-align: center;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px dashed var(--border);
+        }
+
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-container img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.25s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Specs & Attachments Layout */
+        .specs-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .spec-box {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .spec-list, .attachment-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+
+        .spec-list span.val {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .attachment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .attachment-item {
+            background: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .attachment-item strong {
+            color: var(--primary);
+        }
+
+        .attachment-item span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 25px;
+            border-radius: var(--radius);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero, .specs-container {
+                grid-template-columns: 1fr;
+            }
+            .attachment-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <img src="image/logo.jpg" alt="Body Systems Logo">
+            <div class="header-contact">
+                Call Us: <span>(800) 555-2811</span>
+            </div>
+        </header>
+
+        <!-- Hero Unit -->
+        <section class="hero">
+            <div class="hero-text">
+                <span class="badge">Commercial Grade</span>
+                <h1>Body Systems LSM400</h1>
+                <p><strong>Linear Smith Machine</strong></p>
+                <p>Designed for both serious fitness users and beginners, the LSM400's vertical design provides all safety and control associated with Smith Machines while maximizing natural gravity resistance.</p>
+                <p>Compact engineering allows full utilization in home gyms without sacrificing space. Place it against any wall and start training instantly!</p>
+            </div>
+            <div class="product-image-container">
+                <img src="image/smith.jpg" alt="LSM400 Linear Smith Machine">
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <h2 class="section-title">Key Features & Engineering</h2>
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>Smooth Smith Action</h3>
+                <p>Bar rated at 800 lb. capacity slides on ultra-smooth Teflon bushings alongside solid steel guide rods for maximum muscle utilization.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Proper 7° Lifting Angle</h3>
+                <p>Travels along a biomechanically proven 7-degree vertical path to protect joints and increase comfort during heavy lifts.</p>
+            </div>
+            <div class="feature-card">
+                <h3>20 Safety Lock Points</h3>
+                <p>Integrated lockout positions ensure a safe, solid stop at any moment of your repetition without needing a workout partner.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Rugged Construction</h3>
+                <p>Built with heavy 12-gauge steel frames and 7-gauge reinforcing plates designed for lifetimes of intensive training.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Lifetime Warranty</h3>
+                <p>Comprehensive lifetime coverage on every single part. We repair or replace any component guarantee.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Standard Compatibility</h3>
+                <p>Fully compatible with all standard Olympic weight plates and easy-to-swap training attachments.</p>
+            </div>
+        </section>
+
+        <!-- Specs and Attachments -->
+        <section class="specs-container">
+            <!-- Specs -->
+            <div class="spec-box">
+                <h2 class="section-title" style="font-size: 1.2rem;">Dimensions</h2>
+                <ul class="spec-list">
+                    <li><span>Width</span> <span class="val">85"</span></li>
+                    <li><span>Height</span> <span class="val">82"</span></li>
+                    <li><span>Depth</span> <span class="val">72"</span></li>
+                </ul>
+            </div>
+
+            <!-- Attachments -->
+            <div class="spec-box">
+                <h2 class="section-title" style="font-size: 1.2rem;">Optional Attachments</h2>
+                <div class="attachment-grid">
+                    <div class="attachment-item">
+                        <strong>Selectorized Lat/Row</strong>
+                        <span>Part: MA831-4</span>
+                    </div>
+                    <div class="attachment-item">
+                        <strong>Pec Dec Station</strong>
+                        <span>Part: MA218-6</span>
+                    </div>
+                    <div class="attachment-item">
+                        <strong>Dip Station</strong>
+                        <span>Part: MA105-3</span>
+                    </div>
+                    <div class="attachment-item">
+                        <strong>Plate Tree</strong>
+                        <span>Part: MA488-0</span>
+                    </div>
+                    <div class="attachment-item">
+                        <strong>Accessory Organizer</strong>
+                        <span>Part: MA212-1</span>
+                    </div>
+                    <div class="attachment-item">
+                        <strong>Workout DVD & Poster</strong>
+                        <span>Part: MA051-1 / MA055-3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Body Systems Inc.</strong></p>
+            <p>401 Commercial Drive, Eaton, TX 87015 | Phone: (800) 555-2811</p>
+        </footer>
+    </div>
+
+</body>
+</html>

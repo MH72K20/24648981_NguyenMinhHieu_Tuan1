@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            width: 700px;
+            border: 1px solid #739ac5;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1 {
+            margin-top: 0;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        fieldset {
+            border: 1px solid #7f9db9;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        legend {
+            padding: 0 5px;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 4px 0;
+            vertical-align: top;
+        }
+        .label {
+            width: 120px;
+        }
+        input[type="text"], textarea, select {
+            border: 1px solid #7f9db9;
+            font-family: Arial, sans-serif;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            padding: 3px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Your message:</legend>
+                <table>
+                    <tr>
+                        <td class="label"><label for="to">To</label></td>
+                        <td><input type="text" id="to" name="to" value="Example Cafe" size="30"></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="email">Your email</label></td>
+                        <td><input type="text" id="email" name="email" size="30"></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="message">Message</label></td>
+                        <td><textarea id="message" name="message" rows="8" cols="50"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="file">Attach File</label></td>
+                        <td><input type="file" id="file" name="file"></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>How you found us:</legend>
+                <table>
+                    <tr>
+                        <td class="label"><label for="how">How did you hear of us</label></td>
+                        <td>
+                            <select id="how" name="how">
+                                <option value="google">Google</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Newsletter</td>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="newsletter" checked> 
+                                Ensure this box is checked if you would like to receive email updates
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <input type="submit" value="Send message">
+        </form>
+    </div>
+
+</body>
+</html>

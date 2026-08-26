@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Example Cafe Menu</title>
+
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #f6f6f6;
+            margin: 30px;
+            color: #222;
+        }
+
+        .menu-wrap {
+            width: 380px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #cfcfcf;
+            padding: 18px 26px;
+            box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .jump-links {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .jump-links a {
+            color: #6a2b7f;
+            text-decoration: underline;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin: 0 0 14px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        ul {
+            margin-top: 8px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        .back-top {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .back-top a {
+            color: #6a2b7f;
+            text-decoration: underline;
+        }
+
+        .veg {
+            font-size: 12px;
+            color: #6a2b7f;
+            margin-left: 6px;
+            text-decoration: none;
+        }
+
+        .veg:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #444;
+            margin-top: 18px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a id="top"></a>
+
+    <div class="menu-wrap">
+
+        <h1>Example Cafe Menu</h1>
+
+        <div class="jump-links">
+            <a href="#starters">Starters</a> |
+            <a href="#maincourses">Main Courses</a> |
+            <a href="#desserts">Desserts</a>
+        </div>
+
+        <h2 id="starters">Starters</h2>
+
+        <ul>
+            <li>
+                Chestnut and Mushroom Goujons
+                <a href="#vegetarian" class="veg">(v)</a>
+            </li>
+
+            <li>
+                Goat Cheese Salad
+                <a href="#vegetarian" class="veg">(v)</a>
+            </li>
+
+            <li>Honey Soy Chicken Kebabs</li>
+
+            <li>Seafood Salad</li>
+        </ul>
+
+        <p class="back-top">
+            <a href="#top">Back to top</a>
+        </p>
+
+
+        <h2 id="maincourses">Main courses</h2>
+
+        <ul>
+            <li>
+                Spinach and Ricotta Roulade
+                <a href="#vegetarian" class="veg">(v)</a>
+            </li>
+
+            <li>Beef Tournados with Mustard and Dill Sauce</li>
+
+            <li>Roast Chicken Salad</li>
+
+            <li>Icelandic Cod with Parsley Sauce</li>
+
+            <li>
+                Mushroom Wellington
+                <a href="#vegetarian" class="veg">(v)</a>
+            </li>
+        </ul>
+
+        <p class="back-top">
+            <a href="#top">Back to top</a>
+        </p>
+
+
+        <h2 id="desserts">Desserts</h2>
+
+        <ul>
+            <li>
+                Lemon Sorbet
+                <a href="#vegetarian" class="veg">(v)</a>
+            </li>
+
+            <li>
+                Chocolate Mud Pie
+                <a href="#vegetarian" class="veg">(v)</a>
+            </li>
+
+            <li>
+                Pecan Pie
+                <a href="#vegetarian" class="veg">(v)</a>
+            </li>
+
+            <li>
+                Selection of Fine Cheeses from Around the World
+            </li>
+        </ul>
+
+        <p class="back-top">
+            <a href="#top">Back to top</a>
+        </p>
+
+
+        <p id="vegetarian" class="note">
+            Items marked with a
+            <span class="veg">(v)</span>
+            are suitable for vegetarians.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
